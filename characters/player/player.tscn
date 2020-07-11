@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/fonts/Gotisch.tres" type="DynamicFont" id=1]
+[ext_resource path="res://characters/player/scripts/movement.gd" type="Script" id=2]
+[ext_resource path="res://characters/player/scripts/components/components.gd" type="Script" id=3]
+[ext_resource path="res://characters/player/scripts/components/comweapon.gd" type="Script" id=4]
+[ext_resource path="res://assets/unused-img/enemyRanged/run/Armature_newAnimation_00.png" type="Texture" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( 9.66461, 15.9807, -0.718018, 19.7562, -4.49352, 19.7562, -6.02731, 25.0655, -9.92079, 25.3015, -9.56683, -0.419121, -13.1064, -4.90253, -14.9941, -16.8189, -1.54391, -18.4707, 9.66461, -6.79028, 13.4401, 4.53622 )
+
+[node name="Player" type="KinematicBody2D" groups=[
+"enemy",
+"player",
+]]
+position = Vector2( 322.609, 35.3986 )
+collision_mask = 3
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+SPEED = 250
+DASH_SPEED = 20
+
+[node name="Collisions" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2( 0.25, 0.25 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+smoothing_enabled = true
+
+[node name="GUI" type="CanvasLayer" parent="Camera2D"]
+
+[node name="Control" type="Control" parent="Camera2D/GUI"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ammo" type="Label" parent="Camera2D/GUI/Control"]
+margin_right = 249.0
+margin_bottom = 108.0
+custom_fonts/font = ExtResource( 1 )
+text = "12 Bullets"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Components" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="comweapon" type="Node2D" parent="Components"]
+position = Vector2( 0, 32 )
+script = ExtResource( 4 )
+
+[node name="RayCast2D" type="RayCast2D" parent="Components/comweapon"]
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Texture" type="Sprite" parent="Visuals"]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 5 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Visuals"]
+light_mask = -2147483647
+occluder = SubResource( 2 )
+light_mask = -2147483647
