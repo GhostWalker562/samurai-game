@@ -5,6 +5,9 @@ export(float) var SPEED = 2.0;
 export(int) var HEALTH = 250;
 export(int) var DAMAGE = 15;
 
+export(int) var EXPLOSIONS = 5;
+
+
 onready var nav_2d : Navigation2D = get_node("..");
 onready var ray: RayCast2D = get_node("Ray");
 onready var hitbox : Area2D = get_node("Area2D");
@@ -97,7 +100,7 @@ func _handle_special_move_1():
 		animation.speed_scale = 12;
 		# DO MOVES
 		var rng = RandomNumberGenerator.new()
-		for x in range(5):
+		for x in range(EXPLOSIONS):
 			rng.randomize()
 			var rnumx = rng.randf_range(-300.0, 300.0)
 			var rnumy = rng.randf_range(-300.0, 300.0)

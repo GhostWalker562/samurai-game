@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Samurai Game"
-run/main_scene="res://main.tscn"
+run/main_scene="res://intro.tscn"
 boot_splash/bg_color=Color( 0.0901961, 0.0862745, 0.0862745, 1 )
 config/icon="res://icon.png"
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://map/dungeon.tres" type="TileSet" id=1]
 [ext_resource path="res://characters/player/player.tscn" type="PackedScene" id=2]
@@ -77,6 +77,30 @@ animations = [ {
 
 [sub_resource type="OccluderPolygon2D" id=8]
 polygon = PoolVector2Array( 35.7705, -38.5541, -36.2158, -48.1523, -15.4199, -123.338, 74.1631, -120.138, 138.15, -120.138, 221.334, -180.926, 264.525, -168.129, 301.318, -76.9467, 309.316, -4.96069, 272.524, 27.033, 251.728, 47.8289, 122.153, 76.6232, 93.3594, 49.4285, 53.3662, -8.1601 )
+
+[sub_resource type="CanvasItemMaterial" id=9]
+blend_mode = 1
+
+[sub_resource type="Curve" id=10]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0518018 ), 0.303698, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=11]
+curve = SubResource( 10 )
+
+[sub_resource type="ParticlesMaterial" id=12]
+emission_shape = 1
+emission_sphere_radius = 29.89
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+gravity = Vector3( 0, 45, 0 )
+initial_velocity = 8.7
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 6.45
+radial_accel = 1.15
+angle = 180.0
+scale = 0.05
+scale_curve = SubResource( 11 )
 
 [sub_resource type="Environment" id=5]
 background_mode = 4
@@ -311,7 +335,7 @@ polygon = PoolVector2Array( -89.1003, -314.199, -64.5302, -351.044, -33.1767, -3
 position = Vector2( -71.7965, 97.5419 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
-frame = 4
+frame = 6
 speed_scale = 2.0
 playing = true
 
@@ -330,7 +354,7 @@ shadow_filter_smooth = 5.3
 position = Vector2( 265.81, 10.7676 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
-frame = 3
+frame = 5
 speed_scale = 2.0
 playing = true
 flip_h = true
@@ -353,7 +377,7 @@ shadow_filter_smooth = 5.3
 position = Vector2( -110.438, -207.524 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 6 )
-frame = 3
+frame = 5
 speed_scale = 2.0
 playing = true
 flip_h = true
@@ -395,7 +419,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Navigation2D/Background/Sprite"]
 position = Vector2( 1.24423, -12.273 )
 frames = SubResource( 7 )
-frame = 3
+frame = 5
 speed_scale = 2.0
 playing = true
 
@@ -418,7 +442,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Navigation2D/Background/Sprite2"]
 position = Vector2( 1.24423, -12.273 )
 frames = SubResource( 7 )
-frame = 3
+frame = 5
 speed_scale = 2.0
 playing = true
 
@@ -530,13 +554,32 @@ position = Vector2( 404.674, 628.844 )
 
 [node name="Enemy (Boss)" parent="Navigation2D" instance=ExtResource( 3 )]
 position = Vector2( 271.943, -325.285 )
+scale = Vector2( 0.5, 0.5 )
 collision/safe_margin = 1.0
-HEALTH = 2000
+SPEED = 3.0
+HEALTH = 1000
+DAMAGE = 35
+EXPLOSIONS = 2
+
+[node name="Enemy (Boss)3" parent="Navigation2D" instance=ExtResource( 3 )]
+modulate = Color( 0.419608, 0.419608, 0.419608, 1 )
+position = Vector2( 546.344, -313.101 )
+collision/safe_margin = 1.0
+HEALTH = 5000
+
+[node name="Particles2D" type="Particles2D" parent="Navigation2D/Enemy (Boss)3"]
+modulate = Color( 0.517647, 0.388235, 0.215686, 1 )
+material = SubResource( 9 )
+process_material = SubResource( 12 )
+texture = ExtResource( 31 )
 
 [node name="Enemy (Boss)2" parent="Navigation2D" instance=ExtResource( 3 )]
 position = Vector2( 785.582, -314.748 )
-SPEED = 4.0
-HEALTH = 5000
+scale = Vector2( 0.5, 0.5 )
+SPEED = 3.0
+HEALTH = 1000
+DAMAGE = 35
+EXPLOSIONS = 2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Navigation2D"]
 environment = SubResource( 5 )

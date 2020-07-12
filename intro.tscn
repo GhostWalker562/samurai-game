@@ -1,0 +1,108 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/fonts/Gotisch.tres" type="DynamicFont" id=1]
+[ext_resource path="res://map/intro.gd" type="Script" id=2]
+[ext_resource path="res://assets/1122767-200.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.286275, 0.027451, 0.027451, 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "intro"
+length = 23.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Story:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.5, 20.7, 23 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Story:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 20 ),
+"transitions": PoolRealArray( 1, 0.466516 ),
+"update": 0,
+"values": [ Vector2( 0, 500 ), Vector2( 0, -3000 ) ]
+}
+
+[node name="Intro" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 1953.0
+margin_bottom = 1118.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Story" type="Label" parent="Control"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = -3000.0
+margin_right = 1920.0
+margin_bottom = 660.0
+custom_fonts/font = ExtResource( 1 )
+text = "Year 2052
+
+
+
+
+
+
+
+Four years ago, 
+the president was assassinated 
+by a good-turned-evil legendary 
+samurai known as Kobayakawa Hideyoshi. 
+
+
+
+You are the son of Kobayakawa Hideyoshi.
+
+
+
+You are the only person in the world 
+who not only knows his ways around a gun, 
+but also knows the ins and outs of samurai life.
+
+
+
+
+
+The world has gone corrupt. And with 
+every year that pasts, the fate of humanity creeps closer.
+
+
+With this knowledge in hand, you set out to do the impossible
+—defeat your father, the leader of the United States."
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="anim" type="AnimationPlayer" parent="Control"]
+anims/intro = SubResource( 2 )
+
+[node name="Sound" type="Sprite" parent="."]
+position = Vector2( 101.759, 85.4507 )
+scale = Vector2( 0.444382, 0.444382 )
+texture = ExtResource( 3 )
+[connection signal="animation_finished" from="Control/anim" to="." method="_on_anim_animation_finished"]
