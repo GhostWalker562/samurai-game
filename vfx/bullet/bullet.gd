@@ -9,11 +9,12 @@ var INITIAL_VECTOR : Vector2 = Vector2();
 
 func _ready():
 	set_as_toplevel(true);
+	rotation = INITIAL_VECTOR.angle() + deg2rad(-90) ;
 
 func _process(delta):
-	
-	translate((INITIAL_VECTOR * SPEED));
 	rotation = INITIAL_VECTOR.angle() + deg2rad(-90) ;
+	translate((INITIAL_VECTOR * SPEED));
+	
 	
 
 func _on_Bullet_body_entered(body : Node):
@@ -25,7 +26,8 @@ func _on_Bullet_body_entered(body : Node):
 		vfx.position = self.global_position;
 		vfx.rotation = self.rotation+ deg2rad(-90);
 		vfx.set_as_toplevel(true);
-
+		if (body.is_in_group("enemy")):
+			body.damage(DAMAGE);
 		queue_free();
 
 

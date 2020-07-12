@@ -4,6 +4,8 @@ extends Node2D
 
 # Player node
 onready var PLAYER : KinematicBody2D = get_node("..");
+# GUI node
+onready var GUI : Control = get_node("../Camera2D/GUI/Control");
 
 
 func get_aim_angle():
@@ -11,3 +13,6 @@ func get_aim_angle():
 
 func get_global_pos():
 	return PLAYER.global_position;
+
+func get_gui():
+	return GUI

@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://characters/player/scripts/gui.gd" type="Script" id=1]
+[ext_resource path="res://assets/fonts/Gotisch.tres" type="DynamicFont" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 50.0
+content_margin_right = 50.0
+content_margin_top = 10.0
+content_margin_bottom = 15.0
+corner_radius_top_left = 90
+corner_radius_top_right = 90
+corner_radius_bottom_right = 90
+corner_radius_bottom_left = 90
+
+[node name="Control" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="PanelContainer" parent="."]
+anchor_left = 1.253
+anchor_top = 1.218
+anchor_right = 1.253
+anchor_bottom = 1.218
+margin_right = 40.0
+margin_bottom = 40.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+margin_left = 50.0
+margin_top = 10.0
+margin_right = 524.0
+margin_bottom = 118.0
+custom_constants/separation = 25
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Ammo" type="Label" parent="CenterContainer/HBoxContainer"]
+margin_right = 249.0
+margin_bottom = 108.0
+custom_fonts/font = ExtResource( 2 )
+text = "12 Bullets"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stamina" type="ProgressBar" parent="CenterContainer/HBoxContainer"]
+margin_left = 274.0
+margin_top = 29.0
+margin_right = 474.0
+margin_bottom = 79.0
+rect_min_size = Vector2( 200, 50 )
+size_flags_vertical = 4
+value = 1.8
