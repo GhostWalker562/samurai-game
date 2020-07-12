@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/fonts/Gotisch.tres" type="DynamicFont" id=1]
 [ext_resource path="res://map/intro.gd" type="Script" id=2]
 [ext_resource path="res://assets/1122767-200.png" type="Texture" id=3]
+[ext_resource path="res://assets/POL-code-tetsuo-short.wav" type="AudioStream" id=4]
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.286275, 0.027451, 0.027451, 1 )
@@ -54,10 +55,9 @@ __meta__ = {
 }
 
 [node name="Story" type="Label" parent="Control"]
-modulate = Color( 1, 1, 1, 0 )
-margin_top = -3000.0
+margin_top = -497.5
 margin_right = 1920.0
-margin_bottom = 660.0
+margin_bottom = 3162.5
 custom_fonts/font = ExtResource( 1 )
 text = "Year 2052
 
@@ -105,4 +105,9 @@ anims/intro = SubResource( 2 )
 position = Vector2( 101.759, 85.4507 )
 scale = Vector2( 0.444382, 0.444382 )
 texture = ExtResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+autoplay = true
 [connection signal="animation_finished" from="Control/anim" to="." method="_on_anim_animation_finished"]

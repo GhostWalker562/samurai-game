@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/POL-code-tetsuo-short.wav-540ce65abf18e7af3b8ef1a94af972ed.sample"
+
+[deps]
+
+source_file="res://assets/POL-code-tetsuo-short.wav"
+dest_files=[ "res://.import/POL-code-tetsuo-short.wav-540ce65abf18e7af3b8ef1a94af972ed.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

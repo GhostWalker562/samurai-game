@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/POL-combat-plan-short.wav-4f59f399b8ef396128e4da37c27d9aff.sample"
+
+[deps]
+
+source_file="res://assets/background/POL-combat-plan-short.wav"
+dest_files=[ "res://.import/POL-combat-plan-short.wav-4f59f399b8ef396128e4da37c27d9aff.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

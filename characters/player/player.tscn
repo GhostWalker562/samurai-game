@@ -46,7 +46,7 @@ scale = 2.0
 scale_curve = SubResource( 3 )
 color = Color( 1, 0.980392, 0.917647, 1 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=16]
 resource_name = "blue_flash"
 length = 0.6
 tracks/0/type = "value"
@@ -62,7 +62,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0.811765, 1, 0.682353 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=17]
 resource_name = "red_flash"
 length = 0.6
 tracks/0/type = "value"
@@ -140,7 +140,6 @@ corner_radius_bottom_left = 100
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
 ]]
-modulate = Color( 0, 0.811765, 1, 0.682353 )
 position = Vector2( 673.288, 252.193 )
 collision_mask = 7
 script = ExtResource( 2 )
@@ -174,6 +173,7 @@ script = ExtResource( 4 )
 
 [node name="Gunshot" type="AudioStreamPlayer" parent="Components/comweapon"]
 stream = ExtResource( 18 )
+volume_db = -5.0
 
 [node name="RayCast2D" type="RayCast2D" parent="Components/comweapon"]
 
@@ -194,8 +194,8 @@ script = ExtResource( 15 )
 script = ExtResource( 17 )
 
 [node name="anim" type="AnimationPlayer" parent="Components/commodulate"]
-anims/blue_flash = SubResource( 5 )
-anims/red_flash = SubResource( 6 )
+anims/blue_flash = SubResource( 16 )
+anims/red_flash = SubResource( 17 )
 
 [node name="Visuals" type="Node2D" parent="."]
 
