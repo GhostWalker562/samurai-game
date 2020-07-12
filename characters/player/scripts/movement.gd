@@ -46,10 +46,14 @@ func _handle_aim():
 func _handle_health():
 	if (HEALTH <= 0):
 		set_physics_process(false);
+		get_node("Camera2D/GUI/Opening2").playTitle("YOU DIED")
+		yield(get_tree().create_timer(3),"timeout")
+		get_tree().reload_current_scene();
 	pass
 
 func damage(value:int):
 	HEALTH-=value;
+	get_node("Components/commodulate")._hit_modulate();
 
 # HANDLE DASH
 export(float) var MAX_STAMINA = 100;
@@ -59,9 +63,10 @@ onready var stamina = get_node("Camera2D/GUI/Control")
 func _handle_dash():
 	_increment_stamina();
 	if (STAMINA == MAX_STAMINA):
+		
 		var motion: Vector2 = Vector2();
 		if (Input.is_action_just_pressed("movement_dash")):
-			
+			get_node("Components/commodulate")._dash_modulate();
 			if (Input.is_action_pressed("movement_up")):
 				motion.y -= SPEED;
 			if (Input.is_action_pressed("movement_down")):
