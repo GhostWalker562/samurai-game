@@ -45,7 +45,7 @@ scale = 2.0
 scale_curve = SubResource( 3 )
 color = Color( 1, 0.980392, 0.917647, 1 )
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=5]
 resource_name = "blue_flash"
 length = 0.6
 tracks/0/type = "value"
@@ -61,7 +61,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0.811765, 1, 0.682353 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=6]
 resource_name = "red_flash"
 length = 0.6
 tracks/0/type = "value"
@@ -77,50 +77,50 @@ tracks/0/keys = {
 "values": [ Color( 1, 0.0235294, 0.0235294, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 8 )
 region = Rect2( 0, 0, 271, 322 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 12 )
 region = Rect2( 0, 0, 233, 329 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=9]
 flags = 4
 atlas = ExtResource( 13 )
 region = Rect2( 0, 0, 283, 340 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 14 )
 region = Rect2( 0, 0, 245, 314 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=11]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 248, 372 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=12]
 animations = [ {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
-"loop": true,
-"name": "running",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "attack",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "running",
+"speed": 5.0
 } ]
 
-[sub_resource type="OccluderPolygon2D" id=11]
+[sub_resource type="OccluderPolygon2D" id=13]
 polygon = PoolVector2Array( 2.62888, 25.7322, 4.48703, 37.9216, 10.0614, 38.4419, 12.2912, 35.3202, 10.1358, 32.6445, 10.2844, 22.6106, 13.1088, 22.0903, 15.7845, 19.0429, 12.4398, 4.99543, 9.61548, 0.461575, 11.102, -4.51823, 12.0682, -9.05208, 13.1831, -14.8495, 10.5074, -20.4239, 6.79111, -21.7617, 0.47345, -23.5455, -8.89154, -24.4374, -16.1011, -21.3158, -19.8174, -12.917, -18.4795, -6.37637, -16.0268, -2.73442, -13.3511, 0.981853, -13.2768, 4.99543, -13.9457, 8.78602, -13.6484, 12.7996, -11.7903, 15.3267, -8.44559, 17.1848, -7.10776, 20.8267, -7.25638, 25.7322, -6.95908, 31.9012, -7.10776, 35.9148, -5.99286, 38.0702, -0.938721, 37.7729, 0.919403, 35.9891, 0.770752, 33.6107, 0.47345, 30.935, 1.06805, 27.2931 )
 
 [sub_resource type="StyleBoxFlat" id=14]
@@ -189,21 +189,21 @@ script = ExtResource( 15 )
 script = ExtResource( 17 )
 
 [node name="anim" type="AnimationPlayer" parent="Components/commodulate"]
-anims/blue_flash = SubResource( 12 )
-anims/red_flash = SubResource( 13 )
+anims/blue_flash = SubResource( 5 )
+anims/red_flash = SubResource( 6 )
 
 [node name="Visuals" type="Node2D" parent="."]
 
 [node name="Texture" type="AnimatedSprite" parent="Visuals"]
 scale = Vector2( 0.25, 0.25 )
-frames = SubResource( 10 )
+frames = SubResource( 12 )
 animation = "idle"
 playing = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Visuals"]
 light_mask = -2147483647
 position = Vector2( -2.08109, -7.35822 )
-occluder = SubResource( 11 )
+occluder = SubResource( 13 )
 light_mask = -2147483647
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
