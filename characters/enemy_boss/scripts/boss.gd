@@ -69,7 +69,9 @@ func attack():
 	yield(get_tree().create_timer(0.5), "timeout");
 	for child in hitbox.get_overlapping_bodies():
 		if (child.is_in_group("player")):
+			$SwordSound.play()
 			child.damage(DAMAGE);
+			$GruntSound.play()
 	yield(get_tree().create_timer(1), "timeout");
 	set_process(true);
 

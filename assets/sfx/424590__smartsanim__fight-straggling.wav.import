@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/424590__smartsanim__fight-straggling.wav-7489e8ce2850f53cef8c1267d3f52446.sample"
+
+[deps]
+
+source_file="res://assets/sfx/424590__smartsanim__fight-straggling.wav"
+dest_files=[ "res://.import/424590__smartsanim__fight-straggling.wav-7489e8ce2850f53cef8c1267d3f52446.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

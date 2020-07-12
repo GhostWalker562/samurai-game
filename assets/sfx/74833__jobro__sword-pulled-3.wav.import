@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/74833__jobro__sword-pulled-3.wav-c25e86f8731273e5816fa6b66cf7beba.sample"
+
+[deps]
+
+source_file="res://assets/sfx/74833__jobro__sword-pulled-3.wav"
+dest_files=[ "res://.import/74833__jobro__sword-pulled-3.wav-c25e86f8731273e5816fa6b66cf7beba.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

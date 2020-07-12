@@ -1,4 +1,4 @@
-[gd_scene load_steps=149 format=2]
+[gd_scene load_steps=151 format=2]
 
 [ext_resource path="res://characters/enemy_boss/scripts/boss.gd" type="Script" id=1]
 [ext_resource path="res://assets/unused-img/enemyClose/thrust/armature_thrust_39.png" type="Texture" id=2]
@@ -74,6 +74,7 @@
 [ext_resource path="res://assets/unused-img/enemyClose/thrust/armature_thrust_51.png" type="Texture" id=72]
 [ext_resource path="res://assets/unused-img/enemyClose/thrust/armature_thrust_53.png" type="Texture" id=73]
 [ext_resource path="res://assets/unused-img/enemyClose/thrust/armature_thrust_59.png" type="Texture" id=74]
+[ext_resource path="res://assets/sfx/74833__jobro__sword-pulled-3.wav" type="AudioStream" id=75]
 [ext_resource path="res://assets/unused-img/enemyClose/thrust/armature_thrust_01.png" type="Texture" id=76]
 [ext_resource path="res://assets/unused-img/enemyClose/thrust/armature_thrust_02.png" type="Texture" id=77]
 [ext_resource path="res://assets/unused-img/enemyClose/thrust/armature_thrust_03.png" type="Texture" id=78]
@@ -144,6 +145,7 @@
 [ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_55.png" type="Texture" id=143]
 [ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_56.png" type="Texture" id=144]
 [ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_53.png" type="Texture" id=145]
+[ext_resource path="res://assets/sfx/416839__alineaudio__grunt1-death-pain.wav" type="AudioStream" id=146]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 61.3197
@@ -155,14 +157,14 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 81 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 8 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 10 ), ExtResource( 30 ), ExtResource( 35 ), ExtResource( 13 ), ExtResource( 33 ), ExtResource( 18 ), ExtResource( 3 ), ExtResource( 27 ), ExtResource( 31 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 14 ), ExtResource( 6 ), ExtResource( 36 ), ExtResource( 15 ), ExtResource( 24 ), ExtResource( 4 ), ExtResource( 28 ), ExtResource( 25 ), ExtResource( 19 ), ExtResource( 26 ), ExtResource( 29 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 65 ), ExtResource( 54 ), ExtResource( 61 ), ExtResource( 59 ), ExtResource( 70 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 69 ), ExtResource( 71 ), ExtResource( 55 ), ExtResource( 62 ), ExtResource( 72 ), ExtResource( 66 ), ExtResource( 73 ), ExtResource( 67 ), ExtResource( 56 ), ExtResource( 60 ), ExtResource( 58 ), ExtResource( 63 ), ExtResource( 74 ), ExtResource( 57 ) ],
-"loop": false,
-"name": "thrust",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 93 ), ExtResource( 133 ), ExtResource( 128 ), ExtResource( 104 ), ExtResource( 94 ), ExtResource( 115 ), ExtResource( 111 ), ExtResource( 105 ), ExtResource( 132 ), ExtResource( 121 ), ExtResource( 130 ), ExtResource( 100 ), ExtResource( 134 ), ExtResource( 122 ), ExtResource( 101 ), ExtResource( 135 ), ExtResource( 129 ), ExtResource( 118 ), ExtResource( 98 ), ExtResource( 119 ), ExtResource( 136 ), ExtResource( 97 ), ExtResource( 137 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 99 ), ExtResource( 131 ), ExtResource( 120 ), ExtResource( 112 ), ExtResource( 138 ), ExtResource( 139 ), ExtResource( 92 ), ExtResource( 123 ), ExtResource( 124 ), ExtResource( 89 ), ExtResource( 125 ), ExtResource( 126 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 110 ), ExtResource( 102 ), ExtResource( 127 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 103 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 142 ), ExtResource( 140 ), ExtResource( 145 ), ExtResource( 141 ), ExtResource( 143 ), ExtResource( 144 ), ExtResource( 87 ), ExtResource( 86 ), ExtResource( 85 ), ExtResource( 88 ) ],
 "loop": false,
 "name": "slash",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 81 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 8 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 10 ), ExtResource( 30 ), ExtResource( 35 ), ExtResource( 13 ), ExtResource( 33 ), ExtResource( 18 ), ExtResource( 3 ), ExtResource( 27 ), ExtResource( 31 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 14 ), ExtResource( 6 ), ExtResource( 36 ), ExtResource( 15 ), ExtResource( 24 ), ExtResource( 4 ), ExtResource( 28 ), ExtResource( 25 ), ExtResource( 19 ), ExtResource( 26 ), ExtResource( 29 ), ExtResource( 32 ), ExtResource( 34 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 65 ), ExtResource( 54 ), ExtResource( 61 ), ExtResource( 59 ), ExtResource( 70 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 69 ), ExtResource( 71 ), ExtResource( 55 ), ExtResource( 62 ), ExtResource( 72 ), ExtResource( 66 ), ExtResource( 73 ), ExtResource( 67 ), ExtResource( 56 ), ExtResource( 60 ), ExtResource( 58 ), ExtResource( 63 ), ExtResource( 74 ), ExtResource( 57 ) ],
+"loop": false,
+"name": "thrust",
 "speed": 5.0
 } ]
 
@@ -226,4 +228,11 @@ value = 100.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SwordSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 75 )
+volume_db = -0.134
+
+[node name="GruntSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 146 )
 [connection signal="animation_finished" from="Texture" to="." method="_on_Texture_animation_finished"]

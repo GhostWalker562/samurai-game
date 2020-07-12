@@ -42,6 +42,7 @@ func _handle_shooting():
 		bulletinstance.global_position = get_global_position();
 		# Sets the direction of the bullet
 		bulletinstance.INITIAL_VECTOR = Vector2(sin(-playerangle),cos(playerangle))
+		$Gunshot.play()
 		bulletinstance.visible = true;
 		add_child(bulletinstance);
 		

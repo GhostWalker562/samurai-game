@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/416839__alineaudio__grunt1-death-pain.wav-90cb50e084b73f6efd0d9b83b069141d.sample"
+
+[deps]
+
+source_file="res://assets/sfx/416839__alineaudio__grunt1-death-pain.wav"
+dest_files=[ "res://.import/416839__alineaudio__grunt1-death-pain.wav-90cb50e084b73f6efd0d9b83b069141d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
