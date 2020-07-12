@@ -9,6 +9,9 @@ export(int) var DASH_SPEED = 10;
 export(int) var HEALTH = 100;
 
 
+func _play_win():
+	$Camera2D/GUI/Opening2.playWin("You Win!");
+
 
 func _physics_process(_delta):
 	_handle_movement();
@@ -44,6 +47,7 @@ func _handle_aim():
 ## HANDLE HEALTH
 
 func _handle_health():
+	get_node("ProgressBar").value = HEALTH
 	if (HEALTH <= 0):
 		set_physics_process(false);
 		get_node("Camera2D/GUI/Opening2").playTitle("YOU DIED")

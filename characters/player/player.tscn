@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://characters/player/gui/gui.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/player/scripts/movement.gd" type="Script" id=2]
@@ -123,11 +123,23 @@ animations = [ {
 [sub_resource type="OccluderPolygon2D" id=11]
 polygon = PoolVector2Array( 2.62888, 25.7322, 4.48703, 37.9216, 10.0614, 38.4419, 12.2912, 35.3202, 10.1358, 32.6445, 10.2844, 22.6106, 13.1088, 22.0903, 15.7845, 19.0429, 12.4398, 4.99543, 9.61548, 0.461575, 11.102, -4.51823, 12.0682, -9.05208, 13.1831, -14.8495, 10.5074, -20.4239, 6.79111, -21.7617, 0.47345, -23.5455, -8.89154, -24.4374, -16.1011, -21.3158, -19.8174, -12.917, -18.4795, -6.37637, -16.0268, -2.73442, -13.3511, 0.981853, -13.2768, 4.99543, -13.9457, 8.78602, -13.6484, 12.7996, -11.7903, 15.3267, -8.44559, 17.1848, -7.10776, 20.8267, -7.25638, 25.7322, -6.95908, 31.9012, -7.10776, 35.9148, -5.99286, 38.0702, -0.938721, 37.7729, 0.919403, 35.9891, 0.770752, 33.6107, 0.47345, 30.935, 1.06805, 27.2931 )
 
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.513726, 0.980392, 0.364706, 1 )
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id=15]
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
 ]]
-modulate = Color( 0.933333, 0.505882, 0.505882, 1 )
-position = Vector2( 324.764, 39.4865 )
+position = Vector2( 673.288, 252.193 )
 collision_mask = 7
 script = ExtResource( 2 )
 __meta__ = {
@@ -148,7 +160,6 @@ smoothing_enabled = true
 [node name="GUI" type="CanvasLayer" parent="Camera2D"]
 
 [node name="Control" parent="Camera2D/GUI" instance=ExtResource( 1 )]
-visible = false
 
 [node name="Opening2" parent="Camera2D/GUI" instance=ExtResource( 16 )]
 
@@ -194,3 +205,17 @@ light_mask = -2147483647
 position = Vector2( -2.08109, -7.35822 )
 occluder = SubResource( 11 )
 light_mask = -2147483647
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_left = -42.9908
+margin_top = 15.5566
+margin_right = 57.0092
+margin_bottom = 29.5566
+rect_min_size = Vector2( 100, 0 )
+custom_styles/fg = SubResource( 14 )
+custom_styles/bg = SubResource( 15 )
+custom_colors/font_color = Color( 0, 0, 0, 0 )
+value = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

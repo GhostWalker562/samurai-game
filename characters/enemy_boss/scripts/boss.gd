@@ -33,6 +33,8 @@ func _physics_process(_delta):
 ## HELPERS
 
 func _handle_health():
+	get_node("ProgressBar").value = HEALTH/5000.0 * 100.0;
+
 	if (HEALTH <= 0):
 		# DO ANIMATION
 		# DIE

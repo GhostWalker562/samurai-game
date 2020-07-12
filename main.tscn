@@ -1,12 +1,32 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://map/dungeon.tres" type="TileSet" id=1]
 [ext_resource path="res://characters/player/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://characters/enemy_boss/boss.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/unused-img/18861-radial_gradient.png" type="Texture" id=4]
 [ext_resource path="res://assets/background/output-onlineimagetools (11).png" type="Texture" id=5]
+[ext_resource path="res://Water 1.jpg" type="Texture" id=6]
 [ext_resource path="res://map/trees/tree.gd" type="Script" id=7]
 [ext_resource path="res://assets/background/output-onlineimagetools (14).png" type="Texture" id=8]
+[ext_resource path="res://map/Game.gd" type="Script" id=9]
+[ext_resource path="res://map/Sprite.gd" type="Script" id=10]
+
+[sub_resource type="Animation" id=3]
+resource_name = "Loop"
+length = 30.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 15, 30 ),
+"transitions": PoolRealArray( 1, 0.482968, 0.420448 ),
+"update": 0,
+"values": [ Vector2( 269.775, -152.995 ), Vector2( -272.67, 279.266 ), Vector2( 269.775, -152.995 ) ]
+}
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 2
@@ -22,7 +42,24 @@ glow_enabled = true
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 248.857, -136.326 )
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10000, 10000 )
+script = ExtResource( 10 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/Loop = SubResource( 3 )
+
 [node name="Navigation2D" type="Navigation2D" parent="."]
+script = ExtResource( 9 )
+
+[node name="Light2D" type="Light2D" parent="Navigation2D"]
+position = Vector2( 508.305, 189.686 )
+scale = Vector2( 10, 10 )
+texture = ExtResource( 4 )
+mode = 2
 
 [node name="TileMap" type="TileMap" parent="Navigation2D" groups=[
 "player",
@@ -93,6 +130,7 @@ HEALTH = 5000
 
 [node name="Enemy (Boss)2" parent="Navigation2D" instance=ExtResource( 3 )]
 position = Vector2( 785.582, -314.748 )
+SPEED = 4.0
 HEALTH = 5000
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Navigation2D"]

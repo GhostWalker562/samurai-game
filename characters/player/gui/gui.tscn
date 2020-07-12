@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://characters/player/scripts/gui.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Gotisch.tres" type="DynamicFont" id=2]
@@ -12,6 +12,12 @@ corner_radius_top_left = 90
 corner_radius_top_right = 90
 corner_radius_bottom_right = 90
 corner_radius_bottom_left = 90
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.376471, 0.870588, 0.894118, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.333333, 0.333333, 0.333333, 1 )
 
 [node name="Control" type="Control"]
 margin_right = 40.0
@@ -63,4 +69,6 @@ margin_right = 474.0
 margin_bottom = 79.0
 rect_min_size = Vector2( 200, 50 )
 size_flags_vertical = 4
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
 value = 1.8

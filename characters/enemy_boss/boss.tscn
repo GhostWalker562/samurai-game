@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=2]
+[gd_scene load_steps=149 format=2]
 
 [ext_resource path="res://characters/enemy_boss/scripts/boss.gd" type="Script" id=1]
 [ext_resource path="res://assets/unused-img/enemyClose/thrust/armature_thrust_39.png" type="Texture" id=2]
@@ -166,10 +166,23 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 1, 0.227451, 0.227451, 1 )
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id=4]
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
 [node name="Enemy (Boss)" type="KinematicBody2D" groups=[
 "enemy",
 ]]
-position = Vector2( 396.474, 176.75 )
+position = Vector2( 398.061, 175.956 )
 collision_layer = 4
 collision_mask = 7
 script = ExtResource( 1 )
@@ -200,4 +213,17 @@ animation = "slash"
 frame = 60
 speed_scale = 5.0
 playing = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_left = -49.6063
+margin_top = -56.3527
+margin_right = 61.3937
+margin_bottom = -42.3527
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 0 )
+value = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="animation_finished" from="Texture" to="." method="_on_Texture_animation_finished"]
