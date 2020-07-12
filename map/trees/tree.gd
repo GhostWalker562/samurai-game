@@ -1,6 +1,6 @@
 extends Sprite
 
-onready var player = get_node("../../Player");
+onready var player = get_node("../../../Player");
 
 func _process(_delta):
 	#print((self.global_position - player.global_position).length())

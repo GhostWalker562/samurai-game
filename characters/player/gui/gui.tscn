@@ -1,23 +1,31 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://characters/player/scripts/gui.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Gotisch.tres" type="DynamicFont" id=2]
+[ext_resource path="res://assets/PXUI-Basic/panel_Example1.png" type="Texture" id=3]
+[ext_resource path="res://assets/PXUI-Basic/panel_Example2.png" type="Texture" id=4]
 
-[sub_resource type="StyleBoxFlat" id=1]
-content_margin_left = 50.0
-content_margin_right = 50.0
-content_margin_top = 10.0
-content_margin_bottom = 15.0
-corner_radius_top_left = 90
-corner_radius_top_right = 90
-corner_radius_bottom_right = 90
-corner_radius_bottom_left = 90
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 450, 150 )
+expand_margin_left = 40.0
+expand_margin_right = 40.0
+expand_margin_top = 40.0
+expand_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxEmpty" id=4]
+content_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.376471, 0.870588, 0.894118, 1 )
 
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.333333, 0.333333, 0.333333, 1 )
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 450, 150 )
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+expand_margin_top = 20.0
+expand_margin_bottom = 20.0
 
 [node name="Control" type="Control"]
 margin_right = 40.0
@@ -42,10 +50,8 @@ __meta__ = {
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
-margin_left = 50.0
-margin_top = 10.0
-margin_right = 524.0
-margin_bottom = 118.0
+margin_right = 474.0
+margin_bottom = 113.0
 custom_constants/separation = 25
 alignment = 1
 __meta__ = {
@@ -54,8 +60,10 @@ __meta__ = {
 
 [node name="Ammo" type="Label" parent="CenterContainer/HBoxContainer"]
 margin_right = 249.0
-margin_bottom = 108.0
+margin_bottom = 113.0
+custom_styles/normal = SubResource( 4 )
 custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.317647, 0.14902, 0.14902, 1 )
 text = "12 Bullets"
 align = 1
 __meta__ = {
@@ -64,9 +72,9 @@ __meta__ = {
 
 [node name="Stamina" type="ProgressBar" parent="CenterContainer/HBoxContainer"]
 margin_left = 274.0
-margin_top = 29.0
+margin_top = 31.0
 margin_right = 474.0
-margin_bottom = 79.0
+margin_bottom = 81.0
 rect_min_size = Vector2( 200, 50 )
 size_flags_vertical = 4
 custom_styles/fg = SubResource( 2 )
