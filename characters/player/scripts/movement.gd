@@ -43,7 +43,10 @@ func _handle_aim():
 
 ## HANDLE HEALTH
 
-func _handle_health
+func _handle_health():
+	if (HEALTH <= 0):
+		set_physics_process(false);
+	pass
 
 func damage(value:int):
 	HEALTH-=value;

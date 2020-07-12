@@ -1,6 +1,6 @@
-[gd_scene load_steps=87 format=2]
+[gd_scene load_steps=147 format=2]
 
-[ext_resource path="res://characters/enemy_samurai/scripts/samurai.gd" type="Script" id=1]
+[ext_resource path="res://characters/enemy_boss/scripts/boss.gd" type="Script" id=1]
 [ext_resource path="res://assets/unused-img/enemyClose/thrust/armature_thrust_39.png" type="Texture" id=2]
 [ext_resource path="res://assets/unused-img/enemyClose/thrust/armature_thrust_16.png" type="Texture" id=3]
 [ext_resource path="res://assets/unused-img/enemyClose/thrust/armature_thrust_29.png" type="Texture" id=4]
@@ -74,7 +74,6 @@
 [ext_resource path="res://assets/unused-img/enemyClose/thrust/armature_thrust_51.png" type="Texture" id=72]
 [ext_resource path="res://assets/unused-img/enemyClose/thrust/armature_thrust_53.png" type="Texture" id=73]
 [ext_resource path="res://assets/unused-img/enemyClose/thrust/armature_thrust_59.png" type="Texture" id=74]
-[ext_resource path="res://assets/unused-img/enemyClose/hit/armature_hit_00.png" type="Texture" id=75]
 [ext_resource path="res://assets/unused-img/enemyClose/thrust/armature_thrust_01.png" type="Texture" id=76]
 [ext_resource path="res://assets/unused-img/enemyClose/thrust/armature_thrust_02.png" type="Texture" id=77]
 [ext_resource path="res://assets/unused-img/enemyClose/thrust/armature_thrust_03.png" type="Texture" id=78]
@@ -84,8 +83,70 @@
 [ext_resource path="res://assets/unused-img/enemyClose/run/armature_run_17.png" type="Texture" id=82]
 [ext_resource path="res://assets/unused-img/enemyClose/run/armature_run_18.png" type="Texture" id=83]
 [ext_resource path="res://assets/unused-img/enemyClose/run/armature_run_19.png" type="Texture" id=84]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_59.png" type="Texture" id=85]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_58.png" type="Texture" id=86]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_57.png" type="Texture" id=87]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_60.png" type="Texture" id=88]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_34.png" type="Texture" id=89]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_37.png" type="Texture" id=90]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_38.png" type="Texture" id=91]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_31.png" type="Texture" id=92]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_00.png" type="Texture" id=93]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_04.png" type="Texture" id=94]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_42.png" type="Texture" id=95]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_43.png" type="Texture" id=96]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_21.png" type="Texture" id=97]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_18.png" type="Texture" id=98]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_25.png" type="Texture" id=99]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_11.png" type="Texture" id=100]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_14.png" type="Texture" id=101]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_40.png" type="Texture" id=102]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_44.png" type="Texture" id=103]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_03.png" type="Texture" id=104]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_07.png" type="Texture" id=105]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_45.png" type="Texture" id=106]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_46.png" type="Texture" id=107]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_47.png" type="Texture" id=108]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_48.png" type="Texture" id=109]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_39.png" type="Texture" id=110]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_06.png" type="Texture" id=111]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_28.png" type="Texture" id=112]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_49.png" type="Texture" id=113]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_50.png" type="Texture" id=114]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_05.png" type="Texture" id=115]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_23.png" type="Texture" id=116]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_24.png" type="Texture" id=117]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_17.png" type="Texture" id=118]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_19.png" type="Texture" id=119]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_27.png" type="Texture" id=120]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_09.png" type="Texture" id=121]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_13.png" type="Texture" id=122]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_32.png" type="Texture" id=123]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_33.png" type="Texture" id=124]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_35.png" type="Texture" id=125]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_36.png" type="Texture" id=126]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_41.png" type="Texture" id=127]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_02.png" type="Texture" id=128]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_16.png" type="Texture" id=129]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_10.png" type="Texture" id=130]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_26.png" type="Texture" id=131]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_08.png" type="Texture" id=132]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_01.png" type="Texture" id=133]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_12.png" type="Texture" id=134]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_15.png" type="Texture" id=135]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_20.png" type="Texture" id=136]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_22.png" type="Texture" id=137]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_29.png" type="Texture" id=138]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_30.png" type="Texture" id=139]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_52.png" type="Texture" id=140]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_54.png" type="Texture" id=141]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_51.png" type="Texture" id=142]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_55.png" type="Texture" id=143]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_56.png" type="Texture" id=144]
+[ext_resource path="res://assets/unused-img/enemyClose/slash/armature_slash_53.png" type="Texture" id=145]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 61.3197
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -98,39 +159,44 @@ animations = [ {
 "loop": false,
 "name": "thrust",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 93 ), ExtResource( 133 ), ExtResource( 128 ), ExtResource( 104 ), ExtResource( 94 ), ExtResource( 115 ), ExtResource( 111 ), ExtResource( 105 ), ExtResource( 132 ), ExtResource( 121 ), ExtResource( 130 ), ExtResource( 100 ), ExtResource( 134 ), ExtResource( 122 ), ExtResource( 101 ), ExtResource( 135 ), ExtResource( 129 ), ExtResource( 118 ), ExtResource( 98 ), ExtResource( 119 ), ExtResource( 136 ), ExtResource( 97 ), ExtResource( 137 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 99 ), ExtResource( 131 ), ExtResource( 120 ), ExtResource( 112 ), ExtResource( 138 ), ExtResource( 139 ), ExtResource( 92 ), ExtResource( 123 ), ExtResource( 124 ), ExtResource( 89 ), ExtResource( 125 ), ExtResource( 126 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 110 ), ExtResource( 102 ), ExtResource( 127 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 103 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 142 ), ExtResource( 140 ), ExtResource( 145 ), ExtResource( 141 ), ExtResource( 143 ), ExtResource( 144 ), ExtResource( 87 ), ExtResource( 86 ), ExtResource( 85 ), ExtResource( 88 ) ],
+"loop": false,
+"name": "slash",
+"speed": 5.0
 } ]
 
-[node name="Enemy (Samurai)" type="KinematicBody2D" groups=[
+[node name="Enemy (Boss)" type="KinematicBody2D" groups=[
 "enemy",
 ]]
-position = Vector2( 361.134, 161.518 )
+position = Vector2( 396.474, 176.75 )
 collision_layer = 4
 collision_mask = 7
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+SPEED = 5.0
+HEALTH = 500
+DAMAGE = 50
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
-visible = false
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 75 )
-
 [node name="Ray" type="RayCast2D" parent="."]
 enabled = true
+cast_to = Vector2( 0, 100 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="Hit Area" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PoolVector2Array( 0.178741, 1.02254, 95.8686, 56.1635, 0.59964, 90.8195, -64.5031, 60.6533 )
+polygon = PoolVector2Array( 0.178741, 1.02254, 95.8686, 56.1635, 6.26337, 216.332, -107.105, 62.5547 )
 
 [node name="Texture" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.25, 0.25 )
+modulate = Color( 0.94902, 0.568627, 0.568627, 1 )
+scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 2 )
-animation = "thrust"
+animation = "slash"
 frame = 60
 speed_scale = 5.0
 playing = true

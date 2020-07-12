@@ -9,7 +9,7 @@ var INITIAL_VECTOR : Vector2 = Vector2();
 
 func _ready():
 	set_as_toplevel(true);
-	rotation = INITIAL_VECTOR.angle() + deg2rad(-90) ;
+	rotation = INITIAL_VECTOR.angle() + deg2rad(-90);
 
 func _process(delta):
 	rotation = INITIAL_VECTOR.angle() + deg2rad(-90) ;
