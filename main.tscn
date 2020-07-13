@@ -57,7 +57,7 @@ blend_mode = 2
 [sub_resource type="CanvasItemMaterial" id=3]
 blend_mode = 2
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 16 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
@@ -65,11 +65,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 size = 24
 font_data = ExtResource( 12 )
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
 "frames": [ ExtResource( 24 ), ExtResource( 21 ), ExtResource( 25 ), ExtResource( 22 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 26 ) ],
 "loop": true,
@@ -77,19 +77,19 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="OccluderPolygon2D" id=8]
+[sub_resource type="OccluderPolygon2D" id=7]
 polygon = PoolVector2Array( 35.7705, -38.5541, -36.2158, -48.1523, -15.4199, -123.338, 74.1631, -120.138, 138.15, -120.138, 221.334, -180.926, 264.525, -168.129, 301.318, -76.9467, 309.316, -4.96069, 272.524, 27.033, 251.728, 47.8289, 122.153, 76.6232, 93.3594, 49.4285, 53.3662, -8.1601 )
 
-[sub_resource type="CanvasItemMaterial" id=9]
+[sub_resource type="CanvasItemMaterial" id=8]
 blend_mode = 1
 
-[sub_resource type="Curve" id=10]
+[sub_resource type="Curve" id=9]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0518018 ), 0.303698, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=11]
-curve = SubResource( 10 )
+[sub_resource type="CurveTexture" id=10]
+curve = SubResource( 9 )
 
-[sub_resource type="ParticlesMaterial" id=12]
+[sub_resource type="ParticlesMaterial" id=11]
 emission_shape = 1
 emission_sphere_radius = 29.89
 flag_disable_z = true
@@ -102,9 +102,9 @@ linear_accel = 6.45
 radial_accel = 1.15
 angle = 180.0
 scale = 0.05
-scale_curve = SubResource( 11 )
+scale_curve = SubResource( 10 )
 
-[sub_resource type="Environment" id=5]
+[sub_resource type="Environment" id=12]
 background_mode = 4
 ambient_light_energy = 2.35
 fog_color = Color( 0.133333, 0.243137, 0.352941, 1 )
@@ -342,8 +342,8 @@ polygon = PoolVector2Array( -89.1003, -314.199, -64.5302, -351.044, -33.1767, -3
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Navigation2D/Background"]
 position = Vector2( -71.7965, 97.5419 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 6 )
-frame = 3
+frames = SubResource( 4 )
+frame = 6
 speed_scale = 2.0
 playing = true
 
@@ -361,8 +361,8 @@ shadow_filter_smooth = 5.3
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Navigation2D/Background"]
 position = Vector2( 265.81, 10.7676 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 6 )
-frame = 2
+frames = SubResource( 4 )
+frame = 5
 speed_scale = 2.0
 playing = true
 flip_h = true
@@ -384,8 +384,8 @@ shadow_filter_smooth = 5.3
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Navigation2D/Background"]
 position = Vector2( -110.438, -207.524 )
 scale = Vector2( 2, 2 )
-frames = SubResource( 6 )
-frame = 2
+frames = SubResource( 4 )
+frame = 5
 speed_scale = 2.0
 playing = true
 flip_h = true
@@ -409,7 +409,7 @@ margin_left = -88.0823
 margin_top = 195.648
 margin_right = 86.9177
 margin_bottom = 312.648
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "Move - W A S D
 Shoot - Left Click
 Dash - Shift + Move"
@@ -426,8 +426,8 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Navigation2D/Background/Sprite"]
 position = Vector2( 1.24423, -12.273 )
-frames = SubResource( 7 )
-frame = 2
+frames = SubResource( 6 )
+frame = 5
 speed_scale = 2.0
 playing = true
 
@@ -449,8 +449,8 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Navigation2D/Background/Sprite2"]
 position = Vector2( 1.24423, -12.273 )
-frames = SubResource( 7 )
-frame = 2
+frames = SubResource( 6 )
+frame = 5
 speed_scale = 2.0
 playing = true
 
@@ -475,7 +475,7 @@ scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 29 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Navigation2D/Background/Petals/Petal16"]
-occluder = SubResource( 8 )
+occluder = SubResource( 7 )
 
 [node name="Petal17" type="Sprite" parent="Navigation2D/Background/Petals"]
 position = Vector2( 172.122, -231.78 )
@@ -577,8 +577,8 @@ HEALTH = 5000
 
 [node name="Particles2D" type="Particles2D" parent="Navigation2D/Enemy (Boss)3"]
 modulate = Color( 0.517647, 0.388235, 0.215686, 1 )
-material = SubResource( 9 )
-process_material = SubResource( 12 )
+material = SubResource( 8 )
+process_material = SubResource( 11 )
 texture = ExtResource( 31 )
 
 [node name="Enemy (Boss)2" parent="Navigation2D" instance=ExtResource( 3 )]
@@ -590,5 +590,5 @@ DAMAGE = 35
 EXPLOSIONS = 2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Navigation2D"]
-environment = SubResource( 5 )
+environment = SubResource( 12 )
 [connection signal="finished" from="Sprite/AudioStreamPlayer" to="Sprite/AudioStreamPlayer" method="_on_AudioStreamPlayer_finished"]

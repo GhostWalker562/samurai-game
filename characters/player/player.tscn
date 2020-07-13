@@ -46,7 +46,7 @@ scale = 2.0
 scale_curve = SubResource( 3 )
 color = Color( 1, 0.980392, 0.917647, 1 )
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=5]
 resource_name = "blue_flash"
 length = 0.6
 tracks/0/type = "value"
@@ -62,7 +62,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0.811765, 1, 0.682353 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=6]
 resource_name = "red_flash"
 length = 0.6
 tracks/0/type = "value"
@@ -110,14 +110,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "attack",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
 "name": "running",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "attack",
 "speed": 5.0
 } ]
 
@@ -155,7 +155,6 @@ shape = SubResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2( 0.25, 0.25 )
 current = true
-zoom = Vector2( 0.5, 0.5 )
 smoothing_enabled = true
 
 [node name="GUI" type="CanvasLayer" parent="Camera2D"]
@@ -194,8 +193,8 @@ script = ExtResource( 15 )
 script = ExtResource( 17 )
 
 [node name="anim" type="AnimationPlayer" parent="Components/commodulate"]
-anims/blue_flash = SubResource( 16 )
-anims/red_flash = SubResource( 17 )
+anims/blue_flash = SubResource( 5 )
+anims/red_flash = SubResource( 6 )
 
 [node name="Visuals" type="Node2D" parent="."]
 
